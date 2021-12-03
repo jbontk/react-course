@@ -1,14 +1,14 @@
 import NewMeetupForm from '../components/meetups/NewMeetupForm';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import { dbUrl } from '../shared/constants';
+import { dbMeetupsUrl } from '../shared/constants';
 
 const NewMeetupPage = () => {
   const history = useHistory();
 
   const addMeetupHandler = (meeetupData) => {
     axios
-      .post(`${dbUrl}/meetups.json`, meeetupData)
+      .post(dbMeetupsUrl, meeetupData)
       .then(() => history.replace('/'));
   };
 
