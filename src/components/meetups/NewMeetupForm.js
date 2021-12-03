@@ -4,7 +4,7 @@ import Card from '../ui/Card';
 import Control from '../ui/Control';
 import classes from './NewMeetupForm.module.css';
 
-const NewMeetupForm = () => {
+const NewMeetupForm = (props) => {
   const titleInputRef = useRef();
   const imageInputRef = useRef();
   const addressInputRef = useRef();
@@ -25,7 +25,7 @@ const NewMeetupForm = () => {
       description: enteredDescription,
     };
 
-    console.log(meetupData);
+    props.onAddMeetup(meetupData);
   };
 
   return (
